@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Meelad Sultan - Power Platform Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header h2 {
+            font-size: 1.5em;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .intro {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .intro h2 {
+            color: #0078d4;
+            margin-bottom: 20px;
+        }
+        
+        .projects-title {
+            text-align: center;
+            margin: 60px 0 40px 0;
+            color: #0078d4;
+            font-size: 2em;
+        }
+        
+        .project {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .project h2 {
+            color: #0078d4;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #0078d4;
+            padding-bottom: 10px;
+        }
+        
+        .project-description {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .tech-stack {
+            background: linear-gradient(135deg, #e8f4ff 0%, #f0f8ff 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #0078d4;
+        }
+        
+        .tech-stack strong {
+            color: #0078d4;
+            font-size: 1.1em;
+        }
+        
+        .architecture-section {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #28a745;
+        }
+        
+        .architecture-section h3 {
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            color: #0078d4;
+            font-size: 1.3em;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+        
+        ul {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+        
+        ul li {
+            margin: 10px 0;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .impact-results {
+            background: #f0fff4;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+        }
+        
+        .impact-results h3 {
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+        
+        .impact-results li {
+            color: #28a745;
+            font-weight: 500;
+        }
+        
+        .layer-list {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .layer-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .layer-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .contact {
+            background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 60px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .contact h2 {
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        
+        .contact-links {
+            margin: 30px 0;
+        }
+        
+        .contact a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 5px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .contact a:hover {
+            background: white;
+            color: #0078d4;
+            transform: translateY(-2px);
+        }
+        
+        .certifications {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-card {
+            background: #e8f4ff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-card strong {
+            display: block;
+            color: #0078d4;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .project {
+                padding: 25px;
+            }
+            
+            .contact a {
+                display: block;
+                margin: 10px auto;
+                max-width: 200px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Muhammad Meelad Sultan</h1>
+        <h2>Power Platform Developer | Azure Solutions Architect</h2>
+        <p>3+ Years Experience | 60+ Projects Delivered | Enterprise Solutions Specialist</p>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>About Me</h2>
+            <p>Muhammad Meelad Sultan is an accomplished Power Platform Developer and Azure Solutions Architect with over 3 years of professional experience specializing in enterprise automation, AI integration, and custom business solutions that drive measurable results.</p>
+        </div>
+
+        <h1 class="projects-title">Featured Enterprise Projects</h1>
+
+        <!-- Project 1: IntelliSupport AI -->
+        <div class="project">
+            <h2>🤖 IntelliSupport AI - Enterprise Customer Support Platform</h2>
+            <p class="project-description">
+                IntelliSupport AI is an enterprise-grade customer support platform replacing slow, manual processes with intelligent, automated, and secure 24/7 support. It combines AI-driven conversational agents, process automation, and Azure cloud services to deliver instant, personalized responses across web, mobile, Teams, email, SMS, and voice. The platform supports rich inputs—document and image uploads, camera integration, and voice commands—while connecting to CRM/ERP systems for ticket automation, analytics, and predictive insights. It reduces costs, accelerates resolutions, and scales to meet high demand with full compliance and security.
+            </p>
+            
+            <div class="architecture-section">
+                <h3>🏗️ 9-LAYER ENTERPRISE ARCHITECTURE</h3>
+                <ul class="layer-list">
+                    <li><strong>Layer 1: Customer Touchpoints</strong> – Web chat, mobile apps, Teams, portal, email, SMS, IVR, kiosks</li>
+                    <li><strong>Layer 2: Conversational AI Engine</strong> – Power Virtual Agents + Azure OpenAI (GPT-4), multi-language, voice processing, context management</li>
+                    <li><strong>Layer 3: Intelligence & Analytics</strong> – Sentiment detection, predictive insights, customer behavior analysis, adaptive tone</li>
+                    <li><strong>Layer 4: Automation & Workflow Hub</strong> – 50+ flows for ticketing, SLAs, approvals, knowledge updates, returns, outreach</li>
+                    <li><strong>Layer 5: Data Architecture</strong> – Dataverse, Azure SQL, SharePoint, Blob Storage, master data management, real-time sync</li>
+                    <li><strong>Layer 6: Application Suite</strong> – Self-service portals, agent/admin apps, mobile support apps, KPI dashboards, training tools</li>
+                    <li><strong>Layer 7: Integration Management</strong> – CRM/ERP, payments, logistics, APIs, legacy connectors</li>
+                    <li><strong>Layer 8: Analytics & BI</strong> – Power BI dashboards, real-time monitoring, ROI tracking, anomaly detection</li>
+                    <li><strong>Layer 9: Security & Compliance</strong> – GDPR/HIPAA/SOC2, RBAC, encryption, audit logging, disaster recovery, auto-scaling</li>
+                </ul>
+            </div>
+            
+            <div class="tech-stack">
+                <strong>Technology Stack:</strong><br>
+                <strong>Power Platform:</strong> Power Virtual Agents, Power Automate, Power Apps, Power BI, AI Builder<br>
+                <strong>Azure Services:</strong> Azure OpenAI, Cognitive Services (Speech, Vision, Text), Azure Functions, Logic Apps, Azure SQL, Blob Storage, App Insights, Azure Monitor<br>
+                <strong>Integration:</strong> Azure API Management, Custom Connectors, REST/SOAP, Graph API, Payment & Shipping APIs<br>
+                <strong>Data:</strong> Dataverse, SharePoint, Azure SQL, Blob Storage<br>
+                <strong>Security:</strong> Azure AD, OAuth2/JWT, RBAC, AES-256 encryption, audit logging
+            </div>
+            
+            <h3 class="section-title">🎯 Key Features</h3>
+            <p><strong>Customer-Facing:</strong></p>
+            <ul>
+                <li>24/7 chat & voice support across all channels</li>
+                <li>Multi-language with auto detection & translation</li>
+                <li>Voice commands: speech-to-text, IVR, call transcription</li>
+                <li>Cross-platform support: mobile, desktop, tablets, kiosks, contact-center phones</li>
+                <li>Document uploads: PDFs, images, invoices, contracts</li>
+                <li>OCR & document parsing, product image recognition, barcode scanning</li>
+                <li>Personalized, context-aware responses</li>
+                <li>Self-service order tracking, account updates, downloads, troubleshooting</li>
+                <li>Smart escalation with full conversation history</li>
+            </ul>
+            
+            <p><strong>Operational:</strong></p>
+            <ul>
+                <li>Automated ticket lifecycle with SLA enforcement</li>
+                <li>Multi-level approvals & automated refunds</li>
+                <li>Knowledge base auto-updates & semantic search</li>
+                <li>Legacy system RPA integration</li>
+                <li>Proactive customer outreach & campaigns</li>
+                <li>Immutable audit trails & performance monitoring</li>
+                <li>Capacity alerts & auto-scaling infrastructure</li>
+            </ul>
+            
+            <div class="impact-results">
+                <h3>📊 Business Impact & Results</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <strong>Response Time</strong>
+                        <span>Days → <5 seconds</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>First-Contact Resolution</strong>
+                        <span>55% → 90% (+64%)</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>Cost Savings</strong>
+                        <span>~50% reduction annually</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>Availability</strong>
+                        <span>45 hrs/week → 24/7/365</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>Customer Satisfaction</strong>
+                        <span>3.2/5 → 4.8/5 (+50%)</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>Scalability</strong>
+                        <span>500 → 10,000+ concurrent users</span>
+                    </div>
+                </div>
+                <ul>
+                    <li><strong>ROI:</strong> 400%+ over 3 years</li>
+                    <li><strong>Efficiency Gain:</strong> 64% improvement in first-contact resolution</li>
+                    <li><strong>Uptime:</strong> 99.9% system availability with auto-scaling</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Project 2: Invoice Processing System -->
+        <div class="project">
+            <h2>📄 Enterprise Invoice Processing Automation (German Construction Company)</h2>
+            <p class="project-description">
+                Designed and developed a comprehensive enterprise-grade invoice processing system for a German construction company that revolutionized their invoice management operations. This fully automated solution integrates AI-powered data extraction, intelligent approval workflows, OneDrive document management, and real-time tracking capabilities. The system handles multi-format document processing including PDFs, images, and scanned documents, with automatic data extraction from OneDrive storage locations.
+            </p>
+            
+            <div class="tech-stack">
+                <strong>Technology Stack:</strong> Microsoft Power Platform (Power Automate, Power Apps, AI Builder), SharePoint Online, OneDrive for Business, Microsoft 365 Integration (Excel, Outlook, Teams), Microsoft Dataverse, AI/Machine Learning (Custom AI models, OCR, confidence scoring), REST APIs for ERP integration
+            </div>
+            
+            <h3 class="section-title">Key Features & Capabilities</h3>
+            <ul>
+                <li><strong>OneDrive Integration:</strong> Automatic document detection and extraction from OneDrive folders</li>
+                <li><strong>AI-Powered Data Extraction:</strong> Custom-trained AI Builder models with 95%+ accuracy</li>
+                <li><strong>Multi-Format Support:</strong> PDFs, images, scanned documents, and email attachments</li>
+                <li><strong>Intelligent Approval Routing:</strong> Dynamic approver assignment based on amount thresholds and departments</li>
+                <li><strong>Real-time Status Tracking:</strong> Complete visibility throughout the processing lifecycle</li>
+                <li><strong>Mobile Accessibility:</strong> Power Apps interface for on-the-go approvals</li>
+                <li><strong>ERP Integration:</strong> API connections to SAP and accounting systems</li>
+                <li><strong>German Compliance:</strong> Full adherence to GoBD regulations and tax requirements</li>
+                <li><strong>Audit Trail:</strong> Immutable logging of all transactions and approvals</li>
+                <li><strong>Exception Handling:</strong> Comprehensive error management and recovery workflows</li>
+                <li><strong>Automated Archiving:</strong> Document retention policy management</li>
+                <li><strong>Multi-Level Approvals:</strong> Role-based access control with escalation mechanisms</li>
+            </ul>
+            
+            <h3 class="section-title">Project Deliverables</h3>
+            <ul>
+                <li>✅ Complete system architecture - Modular, scalable design documentation</li>
+                <li>✅ 25+ interconnected Power Automate flows</li>
+                <li>✅ Custom AI Builder models for invoice processing</li>
+                <li>✅ SharePoint and OneDrive configuration with role-based access</li>
+                <li>✅ Excel integration for dynamic logging and reporting</li>
+                <li>✅ Power Apps mobile interface for approvers</li>
+                <li>✅ User training documentation and materials</li>
+                <li>✅ Performance monitoring and KPI tracking dashboard</li>
+            </ul>
+            
+            <div class="impact-results">
+                <h3>📊 Business Impact & Results</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <strong>Processing Time</strong>
+                        <span>2 hours → 24 minutes (-80%)</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>Data Accuracy</strong>
+                        <span>75% → 95% (+20%)</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>Annual ROI</strong>
+                        <span>720% after 2-month break-even</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>Cost Savings</strong>
+                        <span>$21,600 annually</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>Monthly Volume</strong>
+                        <span>500+ invoices at 99.5% uptime</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>Time Saved</strong>
+                        <span>320 hours monthly</span>
+                    </div>
+                </div>
+                <ul>
+                    <li>Zero manual data entry for standard invoice formats</li>
+                    <li>Eliminated manual errors saving $3,600 annually per user</li>
+                    <li>Reduced approval bottlenecks by 60%</li>
+                    <li>Enhanced vendor relationships through faster processing</li>
+                    <li>Real-time visibility into cash flow management</li>
+                    <li>100% audit trail for regulatory compliance</li>
+                    <li>Scalable to handle 10x volume increase without modifications</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Project 3: Complete Sales Pipeline Automation -->
+        <div class="project">
+            <h2>💼 Complete Sales Pipeline Automation System</h2>
+            <p class="project-description">
+                Transform your sales process into a profit-generating machine that works 24/7. This Complete Sales Pipeline Automation system delivers enterprise-grade automation at a fraction of traditional CRM costs. The solution provides end-to-end sales process automation from lead capture to contract closure, including AI-powered lead scoring, automated nurturing sequences, intelligent demo scheduling, dynamic proposal generation, and automated upselling capabilities.
+            </p>
+            
+            <div class="tech-stack">
+                <strong>Technology Stack:</strong> Power Automate (Cloud Flows, Desktop Flows), Power Apps (Canvas & Model-driven), AI Builder (Prediction models, Form processing), Power BI (Real-time dashboards), Dataverse, SharePoint, Microsoft 365 Integration, Custom Connectors for CRM/Marketing tools
+            </div>
+            
+            <h3 class="section-title">Key Features & Capabilities</h3>
+            <ul>
+                <li><strong>Instant Lead Capture:</strong> Multi-channel lead ingestion from web forms, emails, social media, and chat</li>
+                <li><strong>AI-Powered Lead Scoring:</strong> Predictive models identify high-value prospects automatically</li>
+                <li><strong>Automated Nurturing:</strong> Personalized email sequences triggered by prospect behavior</li>
+                <li><strong>Smart Demo Scheduling:</strong> Intelligent calendar integration with automated reminders</li>
+                <li><strong>Dynamic Proposal Generation:</strong> Automated creation of customized proposals and quotes</li>
+                <li><strong>Contract Automation:</strong> E-signature integration with automated follow-up workflows</li>
+                <li><strong>Upselling Intelligence:</strong> AI identifies expansion opportunities in existing customer base</li>
+                <li><strong>Real-time Analytics:</strong> Executive dashboards showing pipeline health and conversion metrics</li>
+                <li><strong>Marketing Attribution:</strong> Track which channels deliver highest-value leads</li>
+                <li><strong>Mobile Access:</strong> Full sales functionality available on mobile devices</li>
+                <li><strong>CRM Integration:</strong> Seamless data sync with existing CRM systems</li>
+                <li><strong>Task Automation:</strong> 80% reduction in manual administrative tasks</li>
+            </ul>
+            
+            <div class="impact-results">
+                <h3>📊 Business Impact & Results</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <strong>Sales Cycle Reduction</strong>
+                        <span>60% faster closure</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>Manual Task Elimination</strong>
+                        <span>80% reduction</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>Lead Response Time</strong>
+                        <span>Hours → Minutes</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>Conversion Rate</strong>
+                        <span>+35% improvement</span>
+                    </div>
+                </ul>
+                <ul>
+                    <li>Perfect for companies spending over $5K monthly on sales tools</li>
+                    <li>Eliminates lost deals due to slow response times</li>
+                    <li>Automated upselling increases customer lifetime value by 40%</li>
+                    <li>Real-time visibility allows data-driven budget allocation</li>
+                    <li>Seamless integration with existing tools - no disruption</li>
+                    <li>Requires no technical expertise to operate</li>
+                    <li>Scales infinitely as business grows</li>
+                    <li>Includes comprehensive training and documentation</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Project 4: Document Approval Workflow Automation -->
+        <div class="project">
+            <h2>📋 Enterprise Document Approval Workflow System</h2>
+            <p class="project-description">
+                Transform document approval chaos into an AI-powered enterprise workflow system. This premium solution features intelligent document classification, predictive analytics, mobile-first executive dashboards, and seamless CRM/ERP integration. The system provides end-to-end document lifecycle management from submission to archival, with intelligent routing, multi-level approvals, compliance tracking, and real-time visibility into approval bottlenecks.
+            </p>
+            
+            <div class="tech-stack">
+                <strong>Technology Stack:</strong> SharePoint Online (Document libraries, content types), Power Automate (Advanced workflows), Power Apps (Mobile & desktop apps), AI Builder (Document classification, form processing), Power BI (Executive dashboards), Dataverse, Custom Connectors (Salesforce, SAP, Oracle, NetSuite), Azure Services (Functions, Logic Apps, Cognitive Services)
+            </div>
+            
+            <h3 class="section-title">Key Features & Capabilities</h3>
+            <ul>
+                <li><strong>Intelligent Document Classification:</strong> AI automatically categorizes and routes documents</li>
+                <li><strong>Predictive Analytics:</strong> Forecast approval times and identify bottlenecks before they occur</li>
+                <li><strong>Mobile-First Design:</strong> Executive dashboards and approval interfaces optimized for mobile</li>
+                <li><strong>Multi-Level Approvals:</strong> Complex approval hierarchies with parallel and sequential routing</li>
+                <li><strong>AI-Powered Routing:</strong> Smart assignment based on document type, content, and organizational rules</li>
+                <li><strong>CRM/ERP Integration:</strong> Seamless connectivity with Salesforce, SAP, Oracle, NetSuite, and 15+ business systems</li>
+                <li><strong>Immutable Audit Trails:</strong> Complete compliance tracking with tamper-proof logging</li>
+                <li><strong>Real-time Visibility:</strong> Dashboard showing all pending, approved, and rejected documents</li>
+                <li><strong>Multi-Tenant Architecture:</strong> Supports multiple departments or companies in single instance</li>
+                <li><strong>Auto-Scaling:</strong> Handles 10,000+ concurrent users with dynamic resource allocation</li>
+                <li><strong>Compliance Enforcement:</strong> Automated checks for regulatory requirements</li>
+                <li><strong>Version Control:</strong> Complete document history with rollback capabilities</li>
+            </ul>
+            
+            <div class="impact-results">
+                <h3>📊 Business Impact & Results</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <strong>Approval Time Reduction</strong>
+                        <span>60% faster processing</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>Compliance Score</strong>
+                        <span>95% achievement rate</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>ROI</strong>
+                        <span>300-400% within 6 months</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>System Uptime</strong>
+                        <span>99.9% availability</span>
+                    </div>
+                </ul>
+                <ul>
+                    <li>Supports 10,000+ users with auto-scaling infrastructure</li>
+                    <li>Enterprise-grade security with role-based access control</li>
+                    <li>Real-time bottleneck identification and resolution</li>
+                    <li>Reduces manual document handling by 75%</li>
+                    <li>Complete audit trail for compliance and legal requirements</li>
+                    <li>Mobile apps enable approvals from anywhere, anytime</li>
+                    <li>Integrated with 15+ major business systems out of the box</li>
+                    <li>Proven ROI of 300-400% within first 6 months</li>
+                    <li>Scalable architecture grows with your organization</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact">
+            <h2>Let's Connect</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">
+                Interested in collaborating or have a project in mind? I'd love to hear from you!
+            </p>
+            
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
+                <a href="https://www.fiverr.com/your-fiverr" target="_blank">Fiverr</a>
+                <a href="https://www.upwork.com/freelancers/your-upwork" target="_blank">Upwork</a>
+                <a href="mailto:your.email@example.com">Email Me</a>
+            </div>
+            
+            <div class="certifications">
+                <p><strong>Certifications & Credentials:</strong></p>
+                <p>PL-200: Microsoft Power Platform Functional Consultant Associate (In Progress - December 2024)</p>
+                <p>Meta Front-End Developer Certification</p>
+                <p>60+ Successfully Delivered Enterprise Projects</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
